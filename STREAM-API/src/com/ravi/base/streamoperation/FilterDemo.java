@@ -1,0 +1,34 @@
+package com.ravi.base.streamoperation;
+
+import com.ravi.base.Student;
+import com.ravi.base.StudentDataBase;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class FilterDemo {
+
+    public static List<Student> filterFemaleStudent(){
+        return StudentDataBase.getStudentDetails()
+                .stream()
+                .filter(student -> student.getGender().equals("Female"))
+                .collect(Collectors.toList());
+    }
+
+    public static  List<Student> filterStudentWithGpa(){
+        return StudentDataBase.getStudentDetails()
+                .stream()
+                .filter(student -> student.getGender().equals("Female"))
+                .filter(student -> student.getGpa()>=3.6)
+                .collect(Collectors.toList());
+    }
+
+    public static void main(String[] args) {
+
+        StudentDataBase.getStudentDetails().forEach(System.out::println);
+        System.out.println("==".repeat(50));
+        filterFemaleStudent().forEach(System.out::println);
+        System.out.println("==".repeat(50));
+        filterStudentWithGpa().forEach(System.out::println);
+    }
+}
