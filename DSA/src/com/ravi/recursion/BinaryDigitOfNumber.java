@@ -4,7 +4,7 @@ package com.ravi.recursion;
  *  This method returns binary equivalent of a number.
  */
 
-public class BinaryDigitOfNumber {
+public class  BinaryDigitOfNumber {
     public static void binaryDigit(int number) {
         if (number == 0) {
             return;

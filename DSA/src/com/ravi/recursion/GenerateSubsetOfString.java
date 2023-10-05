@@ -10,7 +10,6 @@ public class GenerateSubsetOfString {
         generateSubset(str, result, index + 1);
         generateSubset(str,result+str.charAt(index),index+1);
     }
-
     public static void main(String[] args) {
         generateSubset("ABC","",0);
     }
